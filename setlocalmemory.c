@@ -1,3 +1,18 @@
+
+//List 5.16: Declaring variables on the local memory
+__local int lvar;       // Declare lvar on the local memory
+__local int larr[128];  // Declare array larr on the local memory
+__local int *ptr;   // Declare a pointer that points to an address on the local memory
+
+// Set local memory size at runtime (kernel)
+__kernel void local_test(__local char *p, int local_size) {
+    for (int i=0; i < local_size; i++) {
+        p[i] = i;
+    }
+}
+
+
+
 #include <stdlib.h>       
 #ifdef __APPLE__        
 #include <OpenCL/opencl.h>        
