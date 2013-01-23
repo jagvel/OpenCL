@@ -136,6 +136,7 @@ int main(void)
 
 
 // Kernel program
+// moving_average.cl
 
 _kernel void moving_average(__global int *values,      
     __global float *average,    
